@@ -53,7 +53,7 @@ app.post("/api/submit", function(req, res){
 
 app.get("/api/getusers", function(req, res){
   console.log("profiles")
-  db.Profile.findAll()
+  db.Mentors.findAll()
   .then(function(data){
   res.json(data)
   })
