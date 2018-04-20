@@ -43,7 +43,6 @@ class Discover extends Component {
           style={{ fontSize: 75, padding: 150 }}
         >Meet a Mentor!</h1>
         <br></br><br></br>
-        <br></br>
         <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle caret size="md"
             style={{ marginLeft: 10 }}
@@ -51,9 +50,6 @@ class Discover extends Component {
             Search By Industry
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem>Another Industry</DropdownItem>
-            <DropdownItem>Another Industry</DropdownItem>
-            <DropdownItem>Another Industry</DropdownItem>
             <DropdownItem>Another Industry</DropdownItem>
           </DropdownMenu>
         </ButtonDropdown>
@@ -63,10 +59,11 @@ class Discover extends Component {
             return (
               <Col key={item.id} sm="3">
                 <Card className="card" style={{ border: "solid", padding: 10, margin: 10 }}>
-                  <CardImg top width="100%" src={item.pictureUrl} alt="Card image cap" />
+                  <CardImg style={{ height: 225}} src={item.pictureUrl} alt="Card image cap" />
                   <CardBody >
-                    <CardTitle>{item.firstName}{item.lastName}</CardTitle>
-                    <CardSubtitle>{item.headline}</CardSubtitle>
+                    <CardTitle style={{ fontWeight: "bold", fontSize: 25}}>{item.firstName} {item.lastName}</CardTitle>
+                    <CardSubtitle style={{fontStyle: "italic", fontSize: 20}}>{item.industry}</CardSubtitle>
+                    <CardSubtitle style={{fontStyle: "oblique", fontSize: 15}}>{item.headline}</CardSubtitle>
                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                     <Contact />
                   </CardBody>
@@ -81,5 +78,6 @@ class Discover extends Component {
     );
   }
 }
+  
 
 export default Discover

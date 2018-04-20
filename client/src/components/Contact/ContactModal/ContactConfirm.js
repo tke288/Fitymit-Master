@@ -23,14 +23,13 @@ class ContactConfirm extends React.Component {
     render() {
 
         return (
-            <div>
-                <div className="form-group">
-                    <input type="submit" onClick={this.handleSubmit} />
-                </div>
-                <div className="form-group">
-                    <input type="submit" onClick={this.handleCancel} className="Cancel" value="Cancel" />
-                </div>
-            </div>
+            <form>
+                <fieldset>
+                    <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Submit</button>   
+                    &nbsp; &nbsp;&nbsp;  
+                    <button type="submit" class="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
+                </fieldset>
+            </form>
         )
     }
 }
