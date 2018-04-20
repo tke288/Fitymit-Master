@@ -24,6 +24,14 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
+      yearsEXP: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+      },
+      hourlyRate: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+      }
     });
     return Mentors;
   };
