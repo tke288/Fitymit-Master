@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import Container from "../components/Container";
 import axios from 'axios';
 import Login from './Login';
+import Hero from "../components/Hero";
+import Capture from "../Images/mentor2.jpg"
 
 class Create extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {data: {}};
+    this.state = { data: {} };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -32,29 +34,53 @@ class Create extends Component {
       headline: this.state.headline,
       pictureUrl: this.state.pictureUrl
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        console.log(response);
+        alert("Your profile is under review.  We will contact you shortly.")
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
     return (
-      <Container style={{ minHeight: "80%" }}>  
-        <h1 className="text-center">Become a Mentor</h1>
-        <form>
-        <label>firstName<input type = "text" name = "firstName" placeholder = "Input Your Name" onChange={this.handleInputChange} value={this.state.firstName} /></label>
-        <label>lastName<input type = "text" name = "lastName" placeholder = "Input Your lastName" onChange={this.handleInputChange} value={this.state.lastName}/></label>
-        <label>location<input type = "text" name = "location" placeholder = "Input Your location Number" onChange={this.handleInputChange} value={this.state.location}/></label>
-        <label>industry<input type = "text" name = "industry" placeholder = "Input Your Job Title" onChange={this.handleInputChange} value={this.state.industry}/></label>
-        <label>headline<input type = "text" name = "headline" placeholder = "Please write a short bio" onChange={this.handleInputChange} value={this.state.headline}/></label>
-        <label>pictureUrl<input type = "text" name = "pictureUrl" placeholder = "Please write a short bio" onChange={this.handleInputChange} value={this.state.pictureUrl}/></label>
-        <input type="submit" onClick={this.handleSubmit} />
-        <Login />
-        </form>
-      </Container>
+      <div>
+        <Hero backgroundImage={Capture}>
+        </Hero>
+        <Container>
+          <form>
+            <fieldset>
+              <legend>Become a Mentor!</legend>
+              <Login />
+              <div class="form-group">
+                <label>First Name<input type="text" class="form-control" name="firstName" placeholder="Input Your First Name" onChange={this.handleInputChange} value={this.state.firstName} /></label>
+              </div>
+              <div class="form-group">
+                <label>Last Name<input type="text" class="form-control" name="lastName" placeholder="Input Your Last Name" onChange={this.handleInputChange} value={this.state.lastName} /></label>
+              </div>
+              <div class="form-group">
+                <label>City, State<input type="text" class="form-control" name="location" placeholder="Where Do You Live?" onChange={this.handleInputChange} value={this.state.location} /></label>
+              </div>
+              <div class="form-group">
+                <label>What Industry are you in?<input type="text" class="form-control" name="industry" placeholder="What Industry Are You In?" onChange={this.handleInputChange} value={this.state.industry} /></label>
+              </div>
+              <div class="form-group">
+                <label>What is your job title?<input type="text" class="form-control" name="headline" placeholder="Occupation" onChange={this.handleInputChange} value={this.state.headline} /></label>
+              </div>
+              <div class="form-group">
+                <label>Povide us a link to a picture of yourself<input type="text" class="form-control" name="pictureUrl" placeholder="Link To Your Photo" onChange={this.handleInputChange} value={this.state.pictureUrl} /></label>
+              </div>
+            </fieldset>
+            <form>
+              <fieldset>
+                <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+              </fieldset>
+            </form>
+          </form>
+
+        </Container>
+      </div>
     );
   }
 }
