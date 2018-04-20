@@ -27,7 +27,13 @@
 }
 
 .hero h1 {
-  font-size: 60px;
-  padding-top: 140px;
+  font-size: 80px;
+  padding-top: 190px;
   margin-top: 0;
+  font-family: niceFont;
+}
+
+@font-face {
+  font-family: niceFont;
+  src: url(CornerOne-Bold-Regular.ttf);
 }

@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const Hero = props => (
   <div className="hero text-center" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
-    {props.children}
+    <h1>Fitymit</h1>
   </div>
 );
 
