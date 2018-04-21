@@ -3,7 +3,7 @@ import Container from "../components/Container";
 import axios from 'axios';
 import Login from './Login';
 import Hero from "../components/Hero";
-import Capture from "../Images/mentor2.jpg"
+import Capture from "../Images/mentor3.jpg"
 
 class Create extends Component {
   constructor() {
