@@ -1,40 +1,41 @@
 import React from "react";
 import axios from 'axios';
 import queryString from 'query-string';
+import Hero from "../components/Hero";
+import Capture from "../Images/mentor4.jpg"
 
-class Auth extends React.Component{
+class Auth extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
-        this.state = {firstName:"FN", headline:"Title"};
+        this.state = { firstName: "FN", headline: "Title" };
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
-    componentWillMount(){
+    componentWillMount() {
         const params = queryString.parse(this.props.location.search);
         this.setState({
-            uid : params.uid
-          });
+            uid: params.uid
+        });
     }
-    componentDidMount(){
+    componentDidMount() {
         axios.get("http://localhost:3001/profiledata?uid=" + this.state.uid)
-        .then(function (response) {
-            const newState = {
-                firstName : response.data.firstName,
-                lastName : response.data.lastName,
-                location : response.data.location.name,
-                headline : response.data.headline,
-                pictureUrl : response.data.pictureUrl,
-                industry  : response.data.industry,
-            };
-            this.setState(newState)
-            console.log(response);
-        }.bind(this))
-        .catch(function (error) {
-            console.log(error);
-          });
-    }   
+            .then(function (response) {
+                const newState = {
+                    firstName: response.data.firstName,
+                    lastName: response.data.lastName,
+                    location: response.data.location.name,
+                    headline: response.data.headline,
+                    pictureUrl: response.data.pictureUrl,
+                    industry: response.data.industry,
+                };
+                this.setState(newState)
+                console.log(response);
+            }.bind(this))
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -46,38 +47,49 @@ class Auth extends React.Component{
             headline: this.state.headline,
             pictureUrl: this.state.pictureUrl
         })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
-      handleCancel(e) {
+            .then(function (response) {
+                console.log(response);
+            alert("Your profile will be reviewed and we will be in contact.")
+            window.location.replace("http://localhost:3000/")
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    handleCancel(e) {
         e.preventDefault();
         window.location.replace("http://localhost:3000/")
     }
 
 
 
-    render(){
+    render() {
 
         return (
             <div>
-                <h2>Welcome {this.state.firstName} {this.state.lastName}</h2>
-                <img src = {this.state.pictureUrl} alt = "profilepic"></img>
-                <p>Please verify the information below is correct and press Submit if correct.  If incorrect, please hit cancel and manually submit your information.</p>
-                <ul>
-                    <li>Location: {this.state.location}</li>
-                    <li>Industry: {this.state.industry}</li>
-                    <li>Headline: {this.state.headline}</li>
-                </ul>
-
-                <input type="submit" onClick={this.handleSubmit} />
-                <input type="submit" onClick={this.handleCancel} className="Cancel" value="Cancel" />
+                <Hero backgroundImage={Capture}>
+                </Hero>
+                <div class="card mb-3">
+                    <h3 class="card-header">Welcome {this.state.firstName} {this.state.lastName}</h3>
+                    <div class="card-body">
+                        <h5 class="card-title">Please verify the information below is correct and press Submit if correct.  If incorrect, please hit cancel and manually submit your information.</h5>
+                    </div>
+                    <img style={{ height: 250, width: 250 }} src={this.state.pictureUrl} alt="Card image" />
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Location: {this.state.location}</li>
+                        <li class="list-group-item">Industry: {this.state.industry}</li>
+                        <li class="list-group-item">Headline: {this.state.headline}</li>
+                    </ul>
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+                        &nbsp; &nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
 export default Auth;
+
