@@ -1,6 +1,6 @@
 nav.navbar.navbar-default {
-  /* margin-bottom: 0; */
-  background-color: rgba(0,0,0,0);
+  margin-bottom: 0px;
+  background-color: darkblue;
   color: white;
   position: fixed;
   z-index: 2;
