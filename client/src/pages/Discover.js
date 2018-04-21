@@ -5,6 +5,8 @@ import {
 } from 'reactstrap';
 import Contact from "../components/Contact"
 import axios from "axios"
+import Hero from "../components/Hero";
+import Capture from "../Images/mentor2.jpg"
 
 //class dropDown makes the drop down button work properly
 class Discover extends Component {
@@ -39,6 +41,8 @@ class Discover extends Component {
   render() {
     return (
       <div>
+        <Hero backgroundImage={Capture}>
+        </Hero>
         <h1 className="text-center"
           style={{ fontSize: 75, padding: 150 }}
         >Meet a Mentor!</h1>
