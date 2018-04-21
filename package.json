@@ -1,26 +1,27 @@
 {
-  "name": "node_what_todo",
-  "version": "1.0.0",
-  "description": "-Node \r -Express \r -MySQL \r -Handlebars \r -Jquery",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "fitymit",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
-    "body-parser": "^1.14.2",
-    "express": "^4.16.3",
-    "express-handlebars": "^2.0.1",
-    "http": "0.0.0",
-    "https": "^1.0.0",
-    "mongodb": "2.2.33",
-    "mysql": "^2.12.0",
-    "querystring": "^0.2.0",
-    "sequelize": "^3.27.0"
+    "caniuse-lite": "^1.0.30000823",
+    "jquery": "^3.3.1",
+    "mobx": "^4.2.0",
+    "mobx-react": "^5.0.0",
+    "prop-types": "^15.6.1",
+    "query-string": "^6.0.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.3",
+    "reactdom": "^2.0.0",
+    "reactstrap": "^5.0.0"
   },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
