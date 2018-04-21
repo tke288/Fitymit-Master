@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Container from "../components/Container";
 import axios from 'axios';
 import Login from './Login';
-import Hero from "../components/Hero";
-import Capture from "../Images/mentor3.jpg"
+import Hero from "../components/BAMHero";
+import Capture from "../Images/mentor2.jpg"
 
 class Create extends Component {
   constructor() {

@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import Contact from "../components/Contact"
 import axios from "axios"
-import Hero from "../components/Hero";
+import Hero from "../components/MAMHero";
 import Capture from "../Images/mentor2.jpg"
 
 //class dropDown makes the drop down button work properly
@@ -83,5 +83,4 @@ class Discover extends Component {
   }
 }
   
-
 export default Discover
