@@ -5,14 +5,16 @@ import {
 } from 'reactstrap';
 import Contact from "../components/Contact"
 import axios from "axios"
+import "../components/Card/Card.css"
 import Hero from "../components/MAMHero";
 import Capture from "../Images/mentor2.jpg"
+
+document.body.style.backgroundColor = "#DCDCDC"
 
 //class dropDown makes the drop down button work properly
 class Discover extends Component {
 
   state = {
-    dropdownOpen: false,
     profileData: []
   };
 
@@ -31,45 +33,28 @@ class Discover extends Component {
         console.log(error);
       })
   }
-
-  toggle = () => {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    });
-  }
   //renders the page
   render() {
     return (
       <div>
-        <Hero backgroundImage={Capture}>
+      <Hero backgroundImage={Capture}>
         </Hero>
-        <h1 className="text-center"
-          style={{ fontSize: 75, padding: 150 }}
-        >Meet a Mentor!</h1>
         <br></br><br></br>
-        <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret size="md"
-            style={{ marginLeft: 10 }}
-          >
-            Search By Industry
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem>Another Industry</DropdownItem>
-          </DropdownMenu>
-        </ButtonDropdown>
-        <br></br><br></br>
+        <div className="mentors" style={{margin:50}}>
         <Row>
           {this.state.profileData ? this.state.profileData.map(item => {
             return (
-              <Col key={item.id} sm="3">
-                <Card className="card" style={{ border: "solid", padding: 10, margin: 10 }}>
-                  <CardImg style={{ height: 225}} src={item.pictureUrl} alt="Card image cap" />
-                  <CardBody >
+              <Col key={item.id} sm="3" className="container">
+                <Card className="card" style={{ backgroundColor:"white", border:"solid", borderRadius:8, padding: 10, margin: 10, marginTop:30 }}>
+                  <CardImg style={{ height: 175, borderRadius:8}} src={item.pictureUrl} alt="Card image cap" />
+                  <CardBody>
                     <CardTitle style={{ fontWeight: "bold", fontSize: 25}}>{item.firstName} {item.lastName}</CardTitle>
                     <CardSubtitle style={{fontStyle: "italic", fontSize: 20}}>{item.industry}</CardSubtitle>
                     <CardSubtitle style={{fontStyle: "oblique", fontSize: 15}}>{item.headline}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <div className="overlay">
+                    <div className="text">${item.hourlyRate} / hour</div>
                     <Contact />
+                    </div>
                   </CardBody>
                 </Card>
               </Col>
@@ -78,9 +63,11 @@ class Discover extends Component {
       :null
       }
         </Row>
+        </div>
       </div>
     );
   }
 }
   
+
 export default Discover
