@@ -1,39 +1,53 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-import Login from "./Login";
+import "./Footer.css";
+import LI from "../../Images/LIicon.png";
+import FB from "../../Images/FBicon.png";
+import TW from "../../Images/TWicon.png";
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-const Navbar = props => (
-  <nav className="navbar navbar-default">
-    <div className="container-fluid">
-      <div className="navbar-header">
-        <Link className="navbar-brand" to="/">
-          FityMit
-        </Link>
+const Footer = () => (
+  <footer className="page-footer font-small indigo pt-0">
+    <div className="container">
+      <div className="row pt-5 mb-3 text-center d-flex justify-content-center" id="topHeader">
+
+        <div className="col-md-3 mb-3">
+          <h6 className="text-uppercase font-weight-bold">
+            <a href="http://localhost:3000/about">About us</a>
+          </h6>
+        </div>
+
+        <div className="col-md-3 mb-3">
+          <h6 className="text-uppercase font-weight-bold">
+          <a href="http://localhost:3000/discover">Meet A Mentor</a>
+          </h6>
+        </div>
+
+        <div className="col-md-3 mb-3">
+          <h6 className="text-uppercase font-weight-bold">
+          <a href="http://localhost:3000/create">Become a Mentor</a>
+          </h6>
+        </div>
+
+        <div className="col-md-3 mb-3">
+          <h6 className="text-uppercase font-weight-bold">
+            <a href="#!">Contact Us</a>
+          </h6>
+        </div>
+
       </div>
-      <ul className="nav navbar-nav">
-        <li
-          className={
-            window.location.pathname === "/" || window.location.pathname === "/about"
-              ? "active"
-              : ""
-          }
-        >
-          <Link to="/">About</Link>
-        </li>
-        <li className={window.location.pathname === "/discover" ? "active" : ""}>
-          <Link to="/discover">Meet a Mentor</Link>
-        </li>
-        <li className={window.location.pathname === "/create" ? "active" : ""}>
-          <Link to="/create">Become a Mentor</Link>
-        </li>
-      </ul>
-      <div>
-      <Login />
+      <hr />
+      <div className="row">
+        <div className="col-md-5"></div>
+        <div className="col-md-4"> 
+          <img src={LI} id="icon"/>"  "<img src={FB} id="icon" />"  "<img src={TW} id="icon" />
+        </div>
+        <div className="col-md-4"></div>
+      </div>
+      <div className="row">
+        <div className="col-md-12 d-flex" id="signoff">Fitymit.com</div>
       </div>
     </div>
-  </nav>
+
+  </footer>
 );
 
-export default Navbar;
+export default Footer;
