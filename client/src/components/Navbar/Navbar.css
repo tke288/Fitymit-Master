@@ -3,8 +3,11 @@ nav.navbar.navbar-default {
   background-color: darkblue;
   color: white;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   border-color: rgba(0,0,0,0);
 }
 
+.NavLink {
+  color: lightblue;
+}
