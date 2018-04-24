@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import Container from "../components/Container";
 import axios from 'axios';
+import Row from "../components/Row";
+import Col from "../components/Col";
 import Login from './Login';
 import Hero from "../components/BAMHero";
-import Capture from "../Images/mentor2.jpg"
+import Capture from "../Images/mentor2.jpg";
+import SignOn from "../Images/SignUpGuy.png";
+import One from "../Images/one.png";
+import Two from "../Images/two.png";
+import Three from "../Images/three.png";
+import Schedule from"../Images/schedule.png";
+import Connect from "../Images/connect.jpg";
 
 class Create extends Component {
   constructor() {
@@ -49,6 +57,54 @@ class Create extends Component {
         <Hero backgroundImage={Capture}>
         </Hero>
         <Container>
+          <br />
+          <div>
+            <h1>Fitymiters need your help!</h1>
+            <br />
+            <h3>You can help more people than you know, all you have to do is try. Somewhere on this site there is
+              a user waiting for the knowledge you've got trapped in your head. They need to successfully jump past
+              the hurdles you've already cleared and the perfect person to help them is about to scroll down and 
+              become the next mentor. Lets get started!
+            </h3>
+          </div>
+          <Row>
+            <Col size="md-6">
+              <h2>Step <img src={One} id="numbers" /></h2>
+              <br />
+              <h3> - Start your Fitymit profile off strong by logging in with LinkedIn and having most of your
+                information filled in automatically (including the picture). Be as thorough as possible with your
+                profile so people know how good you are. 
+              </h3>
+            </Col>
+            <Col size="md-6">
+              <img src={SignOn} id="SOguy"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-6">
+            <h2>Step <img src={Two} id="numbers" /></h2>
+            <br />
+            <h3> - Figure out what times you can be available from week to week. The less changes you make to this
+              schedule, the better chance you have of keeping repeat mentees.
+              </h3>
+            </Col>
+            <Col size="md-6">
+            <img src={Schedule} id="SOschedule"/>
+            </Col>
+          </Row>
+          <br />
+          <Row>
+            <Col size="md-6">
+            <h2>Step <img src={Three} id="numbers" /></h2>
+            <h3> - You'll receive an email from Fitymit alerting you to members who need your help. You will receive 
+              a the members profile as well as a brief introduction message from them. If you would like to connect
+              with them, simply reply to the Fitymit message and start mentoring!
+            </h3>
+            </Col>
+            <Col size="md-6">
+            <img src={Connect} id="connection" />
+            </Col>
+          </Row>
           <form>
             <fieldset>
               <legend>Become a Mentor!</legend>
