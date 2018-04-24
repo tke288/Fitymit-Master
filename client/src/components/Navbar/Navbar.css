@@ -3,11 +3,19 @@ nav.navbar.navbar-default {
   background-color: darkblue;
   color: white;
   position: fixed;
-  z-index: 50;
+  z-index: 3;
   width: 100%;
   border-color: rgba(0,0,0,0);
+  height: 70px;
 }
 
-.NavLink {
+#NavLink {
   color: lightblue;
+  margin-top: 10px;
+  font-size: 18px;
+}
+#logo {
+  height: 70px;
+  width: auto;
+  margin-top: -16px;
 }

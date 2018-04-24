@@ -1,5 +1,6 @@
 button {
     background-color: rgba(0,0,0,0);
-    border-color: white;
-    color: white;
+    border-color: lightblue;
+    color: lightblue;
+    margin-top: 8px;
 }
