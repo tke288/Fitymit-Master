@@ -21,7 +21,7 @@ const About = () => (
         <Col size="md-12">
           <br />
           <h3>
-            (find a font for this)Have you ever walked into an interview feeling like you're about to get ambushed? Of course you have, 
+            Have you ever walked into an interview feeling like you're about to get ambushed? Of course you have, 
             we all have. Fitymit is your resource to eliminate that risk for yourself and possibly for others, all while
             making a little extra money on the side.
           </h3>
