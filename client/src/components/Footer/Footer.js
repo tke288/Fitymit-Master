@@ -11,19 +11,19 @@ const Footer = () => (
 
         <div className="col-md-3 mb-3">
           <h6 className="text-uppercase font-weight-bold">
-            <a href="#!">About us</a>
+            <a href="http://localhost:3000/about">About us</a>
           </h6>
         </div>
 
         <div className="col-md-3 mb-3">
           <h6 className="text-uppercase font-weight-bold">
-            <a href="#!">Meet A Mentor</a>
+            <a href="http://localhost:3000/discover">Meet A Mentor</a>
           </h6>
         </div>
 
         <div className="col-md-3 mb-3">
           <h6 className="text-uppercase font-weight-bold">
-            <a href="#!">Become a Mentor</a>
+            <a href="http://localhost:3000/create">Become a Mentor</a>
           </h6>
         </div>
 
