@@ -45,8 +45,8 @@ class Discover extends Component {
           {this.state.profileData ? this.state.profileData.map(item => {
             return (
               <Col key={item.id} sm="3" className="container">
-                <Card className="card" style={{ backgroundColor:"white", border:"solid", borderRadius:8, padding: 10, margin: 10, marginTop:30 }}>
-                  <CardImg style={{ height: 175, borderRadius:8}} src={item.pictureUrl} alt="Card image cap" />
+                <Card className="card" style={{ backgroundColor:"white", border:"solid", borderRadius:12, padding: 10, margin: 10, marginTop:30 }}>
+                  <CardImg style={{ height: 175, borderRadius: 12, position:"relative", left:57}} src={item.pictureUrl} alt="Card image cap" />
                   <CardBody>
                     <CardTitle style={{ fontWeight: "bold", fontSize: 25}}>{item.firstName} {item.lastName}</CardTitle>
                     <CardSubtitle style={{fontStyle: "italic", fontSize: 20}}>{item.industry}</CardSubtitle>
